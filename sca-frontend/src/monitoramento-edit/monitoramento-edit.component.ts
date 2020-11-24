@@ -8,7 +8,7 @@ import { Barragem } from 'models/barragem';
   styleUrls: ['./monitoramento-edit.component.css']
 })
 export class MonitoramentoEditComponent implements OnInit {
-  private barragem: Barragem;
+  public barragem: Barragem;
 
   constructor(private router: Router) {
     this.barragem = this.router.getCurrentNavigation().extras.state.barragem;
@@ -16,6 +16,10 @@ export class MonitoramentoEditComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  OnSubmit(ativoForm){
+    
   }
 
 }

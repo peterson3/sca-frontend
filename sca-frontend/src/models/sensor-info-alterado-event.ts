@@ -1,7 +1,7 @@
 export interface SensorInfoAlteradoEvent {
-    HorarioMedicao: Date;
-    BarragemId: Number;
-    Temperatura : Number;
-    Volume : Number;
-    Pressao : Number;
+    horarioMedicao: Date;
+    barragemId: number;
+    temperatura : number;
+    volume : number;
+    pressao : number;
 }

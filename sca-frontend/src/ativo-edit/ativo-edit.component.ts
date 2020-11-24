@@ -15,8 +15,8 @@ declare var $:any;
 export class AtivoEditComponent implements OnInit {
 
   url = 'https://localhost:44320/ativo';
-  private ativo: Ativo;
-  private tipoAtivos: TipoAtivo[];
+  public ativo: Ativo;
+  public tipoAtivos: TipoAtivo[];
 
   
   constructor(private router: Router, private httpClient: HttpClient, private ativoService: AtivosService) { 
@@ -33,15 +33,15 @@ export class AtivoEditComponent implements OnInit {
   OnSubmit(form){
     console.log(form.value);
     // console.log('ativo tipo id ', this.ativo.tipoId);
-    var ativoUpdated = {
-      Id: this.ativo.id,
-      Nome: form.value.nome,
-      Categoria :form.value.categoria,
-      DataCompra : this.ativo.dataCompra,
-      DataUltimaManutencao : this.ativo.dataUltimaManutencao,
-      Fornecedor : form.value.fornecedor,
-      Identificador : form.value.identificador,
-      Modelo : form.value.modelo,
+    let ativoUpdated: Ativo = {
+      id: this.ativo.id,
+      nome: form.value.nome,
+      categoria :form.value.categoria,
+      dataCompra : this.ativo.dataCompra,
+      dataUltimaManutencao : this.ativo.dataUltimaManutencao,
+      fornecedor : form.value.fornecedor,
+      identificador : form.value.identificador,
+      modelo : form.value.modelo,
       tipoId : form.value.tipoAtivo
       };
     

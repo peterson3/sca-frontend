@@ -17,8 +17,8 @@ declare var $:any;
 export class AtivoAddComponent implements OnInit {
 
   url = 'https://localhost:44320/ativo';
-  private ativo: Ativo;
-  private tipoAtivos: TipoAtivo[];
+  public ativo: Ativo;
+  public tipoAtivos: TipoAtivo[];
   
   constructor(private router: Router, private httpClient: HttpClient, private ativoService: AtivosService) { }
 
@@ -29,13 +29,13 @@ export class AtivoAddComponent implements OnInit {
   OnSubmit(form){
     console.log(form.value);
     this.ativo = {
-      Nome: form.value.nome,
-      Categoria :form.value.categoria,
-      DataCompra : form.value.dataCompra,
-      DataUltimaManutencao : form.value.dataUltimaManutencao,
-      Fornecedor : form.value.fornecedor,
-      Identificador : form.value.identificador,
-      Modelo : form.value.modelo,
+      nome: form.value.nome,
+      categoria :form.value.categoria,
+      dataCompra : form.value.dataCompra,
+      dataUltimaManutencao : form.value.dataUltimaManutencao,
+      fornecedor : form.value.fornecedor,
+      identificador : form.value.identificador,
+      modelo : form.value.modelo,
       tipoId : form.value.tipoAtivo
       }
     this.ativoService.insertAtivo(this.ativo);    

@@ -69,7 +69,7 @@ export class AtivosComponent implements OnInit {
     if(confirm("Deletar "+ ativo.nome + "?")) {
       console.log('exclusão confirmada pelo usuário');
       this.ativosService.deleteAtivo(ativo.id);
-      var index =this.ativos.map( x=> { return x.Id; }).indexOf(id);
+      var index =this.ativos.map( x=> { return x.id; }).indexOf(id);
 
       this.ativos.splice(index, 1);
 

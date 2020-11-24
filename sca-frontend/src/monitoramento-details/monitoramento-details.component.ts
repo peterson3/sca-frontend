@@ -15,7 +15,7 @@ import { SignalRService } from 'services/signal-r.service';
   styleUrls: ['./monitoramento-details.component.css']
 })
 export class MonitoramentoDetailsComponent implements OnInit {
-    private barragem: Barragem;
+    public barragem: Barragem;
 
   public data: SensorInfoAlteradoEvent;
   public myChart: Chart;
@@ -159,18 +159,18 @@ export class MonitoramentoDetailsComponent implements OnInit {
     public monitoramentoCallback = (data) => {
     this.data = data;
     console.log(this.data);
-    this.addData(this.myChart, this.data.volume, Date.parse(this.data.horarioMedicao));
-    this.addData(this.myChart2, this.data.volume-1, Date.parse(this.data.horarioMedicao));
-    this.addData(this.myChart3, this.data.volume-5/3, Date.parse(this.data.horarioMedicao));
-    this.addData(this.myChart4, this.data.volume-3/2, Date.parse(this.data.horarioMedicao));
+    this.addData(this.myChart, this.data.volume, new Date(this.data.horarioMedicao));
+    this.addData(this.myChart2, this.data.volume-1, new Date(this.data.horarioMedicao));
+    this.addData(this.myChart3, this.data.volume-5/3, new Date(this.data.horarioMedicao));
+    this.addData(this.myChart4, this.data.volume-3/2, new Date(this.data.horarioMedicao));
   }
 
-  public addData(chart: Chart, value: Number, time: Date) {
+  public addData(chart: Chart, value: number, time: Date) {
     chart.data.datasets.forEach((dataset) => {
         if (dataset.data.length > 10){
           dataset.data.shift();
         }
-        dataset.data.push({x: time, y:value});
+        dataset.data.push(value);
     });
     chart.update();
 }
