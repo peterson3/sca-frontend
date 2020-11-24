@@ -1,0 +1,89 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Editar Ativo</h4>
+                    </div>
+                    <div class="content">
+                        <form #ativoForm="ngForm" (ngSubmit)="OnSubmit(ativoForm)"> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input name="nome" [(ngModel)]="ativo.nome" #nome="ngModel" type="text" class="form-control" placeholder="Nome do Ativo">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Modelo</label>
+                                        <input name="modelo" [(ngModel)]="ativo.modelo" #modelo="ngModel" type="text" class="form-control" placeholder="Modelo do Ativo">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                    
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Identificador</label>
+                                        <input name="identificador" [(ngModel)]="ativo.identificador" #identificador="ngModel" type="email" class="form-control" placeholder="Tag Indentificador do Ativo">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="sel2">Tipo de Ativo</label>
+                                        <select name="tipoAtivo" [(ngModel)]="ativo.tipoId" #tipoAtivo="ngModel" class="form-control" id="sel2">
+                                            <option *ngFor="let ta of tipoAtivos" [ngValue]="ta.id">
+                                                    {{ta.descricao}}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                </div>
+id
+                        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data da Compra</label>
+                                        <input type="date" name="dataCompra" [value]="ativo.dataCompra | date:'yyyy-MM-dd'"  class="form-control" (input)="ativo.dataCompra=parseDate($event.target.value)" >
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Data da Última Manutenção</label>
+                                        <input name="dataUltimaManutencao" [value]="ativo.dataUltimaManutencao | date:'yyyy-MM-dd'"  type="date" class="form-control" (input)="ativo.dataUltimaManutencao=parseDate($event.target.value)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Categoria</label>
+                                        <input name="categoria" [(ngModel)]="ativo.categoria" #categoria="ngModel" type="text" class="form-control" placeholder="Categoria">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>Fornecedor</label>
+                                        <input name="fornecedor" [(ngModel)]="ativo.fornecedor" #fornecedor="ngModel" type="text" class="form-control" placeholder="Fornecedor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success btn-fill pull-right">Salvar Alterações</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="main-content" >
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">{{barragem.nome}}</h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <h3></h3>
+                        </div>
+                        <form #ativoForm="ngForm" (ngSubmit)="OnSubmit(ativoForm)"> 
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input name="nome" [(ngModel)]="barragem.nome" #nome="ngModel" type="text" class="form-control" placeholder="Nome da Barragem" disabled>
+
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="volumemax">Volume Máximo</label>
+                                            <input name="volumemax" [(ngModel)]="barragem.volumeMax" type="number" class="form-control" placeholder="Tag Indentificador do Ativo">
+                                        </div>
+                                    </div>
+                                </div>                        
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="lat">Latitude</label>
+                                        <input name="lat" [(ngModel)]="barragem.lat" type="number" class="form-control" placeholder="Tag Indentificador do Ativo">
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="long">Longitude</label>
+                                        <input name="long" [(ngModel)]="barragem.long" type="number" class="form-control" placeholder="Tag Indentificador do Ativo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-success btn-fill pull-right">Salvar Alterações</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ativos</h4>
+                        <!-- <p class="category">Here is a subtitle for this table</p> -->
+                    </div>
+                    
+                    <div class="header">
+                        <input [(ngModel)]="busca" name="busca" type="text" class="form-control" >
+                        <button class="btn btn-primary btn-fill" (click)="BuscarAtivo(busca)">Buscar</button>
+
+                        <!-- <p class="category">Here is a subtitle for this table</p> -->
+                    </div>
+                    
+                    <div class="content table-responsive table-full-width">
+                          <table class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of tableData1.dataRows">
+                                        <td>{{row.id}}</td>
+                                        <td>{{row.nome}}</td>
+                                        <td>{{row.modelo}}</td>
+                                        <td>{{row.identificador}}</td>
+                                        <td>{{row.dataCompra}}</td>
+                                        <td>{{row.dataCadastro}}</td>
+                                        <td>{{row.dataUltimaManutencao}}</td>
+                                        <td>{{row.categoria}}</td>
+                                        <td>{{row.fornecedor}}</td>
+                                        <td>
+                                            <button class="btn btn-fill btn-primary" (click)="EditarAtivo(row)">Editar</button>
+                                            <button class="btn btn-fill btn-danger" (click)="ExcluirAtivo(row)">Excluir</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                          </table>
+                    </div>
+
+                </div>
+                <button class="btn btn-success btn-fill pull-right" (click)="AdicionarAtivo()">Adicionar Ativo</button>
+
+            </div>
+        </div>
+    </div>
+</div>
