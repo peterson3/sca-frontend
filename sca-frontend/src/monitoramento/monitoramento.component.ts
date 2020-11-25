@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Chart = require('chart.js');
+import { environment } from 'environments/environment';
 import { Barragem } from 'models/barragem';
 import { SensorInfoAlteradoEvent } from 'models/sensor-info-alterado-event';
 import { BarragemService } from 'services/barragem.service';
@@ -26,7 +27,7 @@ export class MonitoramentoComponent implements OnInit {
   // public myChart2: Chart;
   public tableData1: TableData;
   
-   url = 'https://localhost:5001/api/barragem';
+  url = environment.baseUrl + 'barragemService';
    private barragens: Barragem[];
   // private barragemSelecionada: Barragem;
   public busca: string;

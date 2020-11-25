@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from 'environments/environment';
 import { Ativo } from 'models/ativo';
 import { TipoAtivo } from 'models/tipo-ativo';
 import { fromPromise } from 'rxjs/internal-compatibility';
@@ -16,7 +17,7 @@ declare var $:any;
 })
 export class AtivoAddComponent implements OnInit {
 
-  url = 'https://localhost:44320/ativo';
+  url = environment.baseUrl + 'ativosService';
   public ativo: Ativo;
   public tipoAtivos: TipoAtivo[];
   

@@ -4,13 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Ativo } from '../models/ativo';
 import { TipoAtivo } from 'models/tipo-ativo';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AtivosService {
 
-  url = 'https://localhost:44320/ativo'; 
+  url = environment.baseUrl + 'ativosService';
 
   constructor(private httpClient: HttpClient) { }
 

@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'environments/environment';
 import { Barragem } from 'models/barragem';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
@@ -9,7 +10,8 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class BarragemService {
 
-  url = 'https://localhost:5001/api/barragem'; 
+  url = environment.baseUrl + 'barragemService';
+
 
   constructor(private httpClient: HttpClient) { }
 

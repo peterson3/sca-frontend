@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { throwError } from 'rxjs';
 import { sha256 } from 'js-sha256';
+import { environment } from 'environments/environment';
 
 declare var $:any;
 
@@ -14,7 +15,8 @@ declare var $:any;
 })
 export class SignInComponent implements OnInit {
 
-  url = 'https://localhost:44375/usuario/login';
+  url = environment.baseUrl + 'authService/login';
+
 
   constructor(private router: Router, private httpClient: HttpClient) { }
 
