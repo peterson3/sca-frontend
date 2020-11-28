@@ -63,6 +63,11 @@ export class AtivosComponent implements OnInit {
     this.router.navigate(['/ativos/edit'], { state: {ativo: ativo}});
   }
 
+  EditarManutencoesAtivo(ativo: Ativo){
+    console.log('Agendamento de Manutencoes do Ativo:', ativo);   
+    this.router.navigate(['/ativos/manutencao'], { state: {ativo: ativo}});
+  }
+
   ExcluirAtivo(ativo: Ativo){
     var id = 1;
     console.log('ativo a deletar', ativo);

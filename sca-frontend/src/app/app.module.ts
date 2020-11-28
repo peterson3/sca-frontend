@@ -22,6 +22,7 @@ import { AtivoEditComponent } from 'ativo-edit/ativo-edit.component';
 import { MonitoramentoComponent } from 'monitoramento/monitoramento.component';
 import { MonitoramentoDetailsComponent } from 'monitoramento-details/monitoramento-details.component';
 import { MonitoramentoEditComponent } from 'monitoramento-edit/monitoramento-edit.component';
+import { ManutencaoAgendamentoComponent } from './manutencao-agendamento/manutencao-agendamento.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { MonitoramentoEditComponent } from 'monitoramento-edit/monitoramento-edi
     AtivoEditComponent,
     MonitoramentoComponent,
     MonitoramentoDetailsComponent,
-    MonitoramentoEditComponent
+    MonitoramentoEditComponent,
+    ManutencaoAgendamentoComponent
   ],
   providers: [AuthGuard, {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

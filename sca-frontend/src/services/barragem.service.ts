@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Barragem } from 'models/barragem';
@@ -14,7 +14,10 @@ export class BarragemService {
 
 
   constructor(private httpClient: HttpClient) { }
-
+// Headers
+httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
+}
 
   getBarragens(): Observable<Barragem[]> {
     return this.httpClient.get<Barragem[]>(this.url)
@@ -30,6 +33,18 @@ export class BarragemService {
         catchError(this.handleError))
   }
 
+  updateBarragem(barragem: any){
+    console.log('barragem', barragem);
+    return this.httpClient.put(this.url, barragem, this.httpOptions).subscribe(response=> {
+      console.log(response);
+    }, this.handleError)
+  }
+
+  alertar(msg: string){
+    return this.httpClient.post(this.url + '/alertar', {Mensagem: msg}, this.httpOptions).subscribe(response=> {
+      console.log(response);
+    }, this.handleError)
+  }
 
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';

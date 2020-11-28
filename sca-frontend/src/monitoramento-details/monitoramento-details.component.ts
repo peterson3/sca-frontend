@@ -182,4 +182,9 @@ export class MonitoramentoDetailsComponent implements OnInit {
     });
   }
 
+  AlertarBarragem(){
+    this.barragemService.alertar("Procedimento de Alerta Iniciado para " + this.barragem.nome + ". Favor iniciar evacuação.");
+
+  }
+
 }

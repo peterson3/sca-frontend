@@ -12,11 +12,13 @@ import { RelatoriosComponent } from 'relatorios/relatorios.component';
 import { AtivoEditComponent } from 'ativo-edit/ativo-edit.component';
 import { MonitoramentoDetailsComponent } from 'monitoramento-details/monitoramento-details.component';
 import { MonitoramentoEditComponent } from 'monitoramento-edit/monitoramento-edit.component';
+import { ManutencaoAgendamentoComponent } from 'app/manutencao-agendamento/manutencao-agendamento.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'ativos',          component: AtivosComponent},
     { path: 'ativos/add',      component: AtivoAddComponent }, 
     { path: 'ativos/edit',      component: AtivoEditComponent }, 
+    { path: 'ativos/manutencao', component: ManutencaoAgendamentoComponent},
     { path: 'signin',         component: SignInComponent },
     { path: 'workflow',         component: WorkflowComponent },
     { path: 'monitoramentoBarragem',   component: MonitoramentoComponent},

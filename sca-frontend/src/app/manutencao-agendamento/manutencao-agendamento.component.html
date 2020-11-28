@@ -1,0 +1,38 @@
+<div>
+    <div class="content">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <h4>{{ativo.nome}}</h4>
+                </div>
+            </div>
+        </div>
+
+        <form #ativoForm="ngForm" (ngSubmit)="OnSubmit(ativoForm)"> 
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <input name="descricao" ngModel #descricao="ngModel" type="text" class="form-control" placeholder="Descrição da Manutenção">
+                    </div>
+                </div>
+            </div>
+       
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input type="date" name="dataManutencao" ngModel #dataManutencao="ngModel" class="form-control" >
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-fill pull-right">Adicionar</button>
+            <div class="clearfix"></div>
+        </form>
+    </div>
+    <div id='calendar'></div>
+
+</div>

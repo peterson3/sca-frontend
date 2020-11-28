@@ -10,6 +10,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { AtivosComponent } from '../../ativos/ativos.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,

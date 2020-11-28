@@ -1,0 +1,56 @@
+.home-container{
+    background-image: url(assets/img/mnediit.jpg);
+    background-position: center;
+    height: 100vh;
+    background-size: cover;
+ 
+}
+
+  
+.blur { 
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    margin-top: 0em;
+    width: 100vh;
+    height: 10vh;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0 0 0px rgba(0,0,0,0.7);
+ /* filter: blur(8px);  */
+    filter: blur(1.5rem);
+    -webkit-filter: blur(8px);
+}
+
+.form-login {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    /* color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 2;
+    /* width: 80%;  */
+     /* padding: 20px; */
+    /* text-align: center; */
+}
+/* @media (max-width: 500px) {
+    .form-login  {
+      min-width: 90%;
+    }
+  } */
+
+/* form {
+    display: block;
+    margin-top: 0em;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    padding: 30px;
+} */
+.pt-5, .py-5 {
+    padding-top: 3rem!important;
+}

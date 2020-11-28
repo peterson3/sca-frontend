@@ -1,25 +1,29 @@
-<div class="background"></div>
-<div class="container">
-  <div class="container">
-    <div class="row">
-    </div>
-    <form #loginForm="ngForm" (ngSubmit)="OnSubmit(username.value, password.value)">
-    <div class="row">
-      <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
+<!-- <div class="home-container" >
+  <div class="blur">
+  </div>
+    <div class="form-login col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3 ">
+
+    <form #loginForm="ngForm" class=""  (ngSubmit)="OnSubmit(username.value, password.value)">
+
+    <div class="">
+
+      <div class="">
         <div class="card">
-          <div class="card-header">
-              <h4>Login</h4>
-          </div>
           <div class="card-form">
-            <div class="form-row">
-              <!-- <i class="material-icons">face</i> -->
+            
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
                 <input type="text" #username class="form-control" placeholder="First Name" required/>
-            </div>
-            <div class="form-row">
-              <!-- <i class="material-icons">lock_outline</i> -->
+              </div>
+
+              </div>
+
+            <div class="form-group row">
                 <input type="password" #password class="form-control" placeholder="Password" required/>
             </div>
-          </div>
+         </div>
+
           <div class="card-footer">
             <button  class="form-control btn btn-info btn-fill pull-right" type="submit">LET'S GO</button>
           </div>
@@ -28,4 +32,53 @@
     </div>
   </form>
   </div>
+</div> -->
+
+<!-- <i class="material-icons">face</i> -->
+<!-- <i class="material-icons">lock_outline</i> -->
+
+<!-- col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3 -->
+
+
+<!-- <div class="home-container"></div>
+<div class="d-flex justify-content-center align-items-center container" >
+    <form #loginForm="ngForm" (ngSubmit)="OnSubmit(username.value, password.value)">
+        <div>
+          <div>
+            <div>   
+              
+                <div>
+                  <label>Usuário</label>
+                  <input type="text" #username class="form-control" required/>
+                </div>
+
+                <div>
+                  <label>Senha</label>
+                    <input type="password" #password class="form-control"  required/>
+                </div>
+
+                <div>
+                  <button type="submit">LET'S GO</button>
+                </div>
+
+            </div>
+          
+          </div>
+      </div>
+  </form>
+</div> -->
+
+<div class="body">
+  <div class="bodyCover">
+
+<div class="contact-form">
+  <img alt="" class="avatar" src="assets/img/profile-avatar.jpg">
+  <form #loginForm="ngForm" (ngSubmit)="OnSubmit(username.value, password.value)">
+    <p>Usuário</p><input #username type="email" required>
+    <p>Senha</p><input #password type="password" required>
+    <input type="submit" class="form-control btn btn-info btn-fill pull-right" value="Entrar">
+  </form>
+</div>
+</div>
+
 </div>

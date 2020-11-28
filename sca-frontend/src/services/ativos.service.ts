@@ -5,11 +5,13 @@ import { retry, catchError } from 'rxjs/operators';
 import { Ativo } from '../models/ativo';
 import { TipoAtivo } from 'models/tipo-ativo';
 import { environment } from 'environments/environment';
+import { Manutencao } from 'models/manutencao';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AtivosService {
+  
 
   url = environment.baseUrl + 'ativosService';
 
@@ -34,12 +36,27 @@ export class AtivosService {
           catchError(this.handleError))
     }
 
+    getAtivoById(data: number):Observable<Ativo> {
+      return this.httpClient.get<Ativo>(this.url +'/' + data.toString())
+        .pipe(
+          retry(2),
+          catchError(this.handleError))
+    }
+
     insertAtivo(ativo: Ativo){
       console.log('ativo', ativo);
       return this.httpClient.post(this.url, ativo, this.httpOptions).subscribe(response=> {
         console.log(response);
       }, this.handleError)
     }
+
+    insertManutencao(ativoId: number, manutencao: Manutencao) {
+      console.log('manutencao', manutencao);
+      return this.httpClient.post(this.url + '/' + ativoId + '/manutencao', manutencao, this.httpOptions).subscribe(response=> {
+        console.log(response);
+      }, this.handleError)
+    }
+
 
     updateAtivo(ativo: Ativo){
       console.log('ativo', ativo);
@@ -49,7 +66,7 @@ export class AtivosService {
     }
 
     getTipoAtivos(){
-      return this.httpClient.get<TipoAtivo[]>(this.url + '/TipoAtivo')
+      return this.httpClient.get<TipoAtivo[]>(this.url + '/TipoAtivo', this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError))
