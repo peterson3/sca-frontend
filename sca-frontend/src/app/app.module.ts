@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app.routing';
@@ -23,6 +23,7 @@ import { MonitoramentoComponent } from 'monitoramento/monitoramento.component';
 import { MonitoramentoDetailsComponent } from 'monitoramento-details/monitoramento-details.component';
 import { MonitoramentoEditComponent } from 'monitoramento-edit/monitoramento-edit.component';
 import { ManutencaoAgendamentoComponent } from './manutencao-agendamento/manutencao-agendamento.component';
+import { TokenInterceptor } from './token.interceptor';
 
 @NgModule({
   imports: [
@@ -50,7 +51,7 @@ import { ManutencaoAgendamentoComponent } from './manutencao-agendamento/manuten
     MonitoramentoEditComponent,
     ManutencaoAgendamentoComponent
   ],
-  providers: [AuthGuard, {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}],
+  providers: [AuthGuard, {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'}, { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
